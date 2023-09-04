@@ -23,6 +23,11 @@
       echo "Dia desconhecido";
   }
 
+  if (is_int($diaDaSemana)) {
+    echo "is integer\n";
+   } else {
+    echo "is not an integer\n";
+   }
 
 
 ?>
