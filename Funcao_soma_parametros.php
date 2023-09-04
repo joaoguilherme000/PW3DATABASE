@@ -1,14 +1,12 @@
 <?php
-    function somaValor (){
-        $num1=2;
-        $num2=2;
+    function somaValor ($num1, $num2){
         $resp=$num1+$num2;
 
         echo "O valor da soma é $resp";
       }
 
       //executa a função
-      somaValor();
+      somaValor(45.0,10.50);
 
 ?>
 
