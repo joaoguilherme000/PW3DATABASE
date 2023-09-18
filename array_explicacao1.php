@@ -1,7 +1,9 @@
 <?php
 
-$nome = array('etecia',10,true,45.50);
+$nome = array('etecia', 10, true, 45.50);
 
-echo "o valor " . $nome[1] + $nome[1];
+for ($i = 0; $i < count($nome); $i++) {
+    echo "O valor: " . $nome[$i] . "<br>";
+}
 
 ?>
