@@ -1,0 +1,13 @@
+{
+    "firstName": "Jonathan",
+    "lastName": "freeman",
+    "loginCount": 4,
+    "isWriter": true,
+    "workWith" : ["Spantree Technology Group", "InfoWorld"],
+    "pets":[
+        {
+            "name": "Lilly",
+            "type": "Raccon"
+        }
+    ]
+}
