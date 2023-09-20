@@ -23,8 +23,4 @@
         }
         echo"<br/>";
     }
-
-    echo "<pre>";
-    print_r($m);
-    echo "<pre>";
 ?>
