@@ -24,6 +24,10 @@ $tamanhoL = 0;
         $tamanhoC++;
     }
 
+    echo "<pre>";
+    print_r($m);
+    echo "<pre>";
+
     echo "Tamanho da linha " . $tamanhoL;
     echo"<br/>";
     echo "Tamanho da linha " . $tamanhoC;
