@@ -12,7 +12,9 @@
     array(74,14,3)
  );
 
-$D = array();
+$resultado = array();
+
+$total = 0;
 
     for ($L=0; $L < 3; $L++) { 
         for ($C=0; $C < 3; $C++) { 
@@ -21,7 +23,7 @@ $D = array();
         echo"<br/>";
     }
 
-    echo "<br>VALOR DE CIMA DA MATRIZ A <br><br>";
+    echo "<h4> VALOR DE CIMA DA MATRIZ A </h4>";
 
     for ($L=0; $L < 3; $L++) { 
         for ($C=0; $C < 3; $C++) { 
@@ -30,20 +32,37 @@ $D = array();
         echo"<br/>";
     }
 
-    echo "<br>VALOR DE CIMA DA MATRIZ B <br><br>";
+    echo "<h4> VALOR DE CIMA DA MATRIZ B </h4>";
 
     for ($L=0; $L < 3; $L++) { 
         for ($C=0; $C < 3; $C++) { 
-            $D[$L][$C] = $b[$L][$C] + $a[$L][$C];
+            $resultado[$L][$C] = $b[$L][$C] + $a[$L][$C];
             echo $b[$L][$C] + $a[$L][$C] . " &nbsp;|&nbsp; ";
-            
         }
         echo"<br/>";
     }
 
-    echo "<br>VALOR DE CIMA DAS MATRIZES SOMADAS";
+    for ($L=0; $L < 3; $L++) { 
+        for ($C=0; $C < 3; $C++) { 
+            $total += $a[$L][$C];
+            $total += $b[$L][$C];
+        }
+    }
 
-    
-    
+    echo "<h4> VALOR DE CIMA DAS MATRIZES SOMADAS </h4>";
+
+    for ($L=0; $L < 3; $L++) { 
+        for ($C=0; $C < 3; $C++) { 
+            $resultado2[$L][$C] = $resultado[$L][$C] + $b[$L][$C] + $a[$L][$C];
+            echo $resultado2[$L][$C] . " &nbsp;|&nbsp; ";
+        }
+        echo"<br/>";
+    }
+
+    echo "<h4>VALOR DE CIMA DA MATRIZ A + B + RESULTADO SOMADO</h4>";
+
+    print_r($total);
+
+    echo " <h4>VALOR DE CIMA DA MATRIZ RESULTADO SOMADO </h4>";
 
 ?>
