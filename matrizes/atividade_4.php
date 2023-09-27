@@ -1,6 +1,6 @@
 <?php
 
-echo "4.Crie  um array que  armazene  o  nome  de  todos  os  meses  do  ano. Digite  um número e ele informe qual o nome do mês correspondente.";
+echo "4.Crie  um array que  armazene  o  nome  de  todos  os  meses  do  ano.<br><br> Digite  um número e ele informe qual o nome do mês correspondente.";
 
 $meses = array(
     "janeiro" => 1,
@@ -16,20 +16,17 @@ $meses = array(
     "novembro" => 11,
     "dezembro" => 12
 );
-
-$mes = 0;
-
 $numero = 1;
 
 foreach ($meses as $key => $value) {
-    $numero = 5;
+    $numero = 9;
 
     if ($numero == $value){
         $nome = $key;
     }
 }
 
-echo "<br/>" . $nome;
+echo "<br/>" . "<h3> $nome </h3>";
 
 
 ?>

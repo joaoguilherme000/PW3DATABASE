@@ -1,5 +1,8 @@
 <?php
 
+print "2 . Da mesma matriz acima deverá calcular o resultado da soma de cada matriz:" . "<br/>" . "<br/>";
+
+
  $b = array(
     array(25,12,35),
     array(85,47,98),
@@ -64,5 +67,8 @@ $total = 0;
     print_r($total);
 
     echo " <h4>VALOR DE CIMA DA MATRIZ RESULTADO SOMADO </h4>";
+
+
+    // EU NÃO SABIA COMO FAZER ENTÃO FIZ TUDO 🤷‍♂️
 
 ?>
