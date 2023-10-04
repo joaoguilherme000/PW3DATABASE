@@ -8,13 +8,13 @@
 </head>
 <body><h2>Exemplo de Formulário</h2>
     <h1>
-        <form name="cadastro" method="get" action="pagina.html">
+        <form name="cadastro" method="post" action="cadastro.php">
             <label for="usuario">Nome: </label>
-            <input type="text" name="nome" id="usuario"autofocus autocomplete="off" size="20" maxlength="9"> <br/><br/>
+            <input type="text" name="usuario" id="usuario" autofocus autocomplete="off" size="20" maxlength="9" required> <br/><br/>
             <label for="senha">Senha: </label>
             <input type="password" name="senha" id="senha"><br/><br/>
             <input type="checkbox" name="termouso" value="termo"/>
-            Aceito os termos de uso
+            Aceito os termos de uso!<br/><br/>
             <input type="radio" name="sexo" value="fem"/>Feminino
             <input type="radio" name="sexo" value="mas"/>Masculino
             <br/>
@@ -25,7 +25,7 @@
             &nbsp;&nbsp;&nbsp;
             <input type="reset" name="Limpar">
             &nbsp;&nbsp;&nbsp;
-            <input type="submit" value="ENVIAR">
+            <input type="submit" value="Enviar">
         </form>
         <button onclick=window.location.href=https:www.google.com.br>
         Google </button>
