@@ -5,6 +5,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $numero1 = $_POST["numero1"];
     $numero2 = $_POST["numero2"];
 
+    $palavra1 = $_POST["palavra1"];
+    $palavra2 = $_POST["palavra2"];
+
     $resultado = 0;
 
     if($escolha == "multiplicar"){
@@ -24,6 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         exit;
     }
     
+    echo "<h1>$palavra1$palavra2<h1/>";
 }
 
 

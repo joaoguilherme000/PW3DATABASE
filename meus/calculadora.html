@@ -9,7 +9,7 @@
 <body>
     <h1>Calculadora</h1>
 
-    <form name="calculadora" method="post" action="resultado.php">
+    <form name="calculadora" method="post" action="resultadoCalculadora.php">
 
         <input type="radio" name="escolha" value="multiplicar"/>*<br><br>
         <input type="radio" name="escolha" value="dividir"/>/<br><br>
@@ -21,6 +21,14 @@
 
         <label for="numero2">Coloque o segundo numero: </label>
         <input type="number" name="numero2" id="numero2" required><br><br>
+
+        <h1>Você tambem pode juntar palavras se voce quiser</h1>
+
+        <label for="palavra1">Coloque a primeira palavra: </label>
+        <input type="text" name="palavra1" id="palavra1"><br><br>
+
+        <label for="palavra2">Coloque a segundo palavra: </label>
+        <input type="text" name="palavra2" id="palavra2"><br><br>
 
         <input type="submit" value="Calcular">
     </form>
