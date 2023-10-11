@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário de Cadastro</title>
+</head>
+<header class="conteiner">
+    <nav>
+        <h1>ATIVIDADE</h1>
+    </nav>
+</header>
+<body >
+    <div class="content">
+        <div class="janela">
+            <form name="cadastro" method="post" action="mostrar.php">
+                <label for="usuario">Nome: </label>
+                <input type="text" name="usuario" id="usuario" autofocus autocomplete="off" size="20" maxlength="9" required> <br/><br/>
+                <label for="senha">Senha: </label>
+                <input type="password" name="senha" id="senha" required><br/><br/>
+                <input type="checkbox" name="termouso" value="termo" required/>
+                Aceito os termos de uso!<br/><br/>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
