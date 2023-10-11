@@ -1,5 +1,4 @@
 <?php
-if($_SERVER["REQUEST_METHOD"] == "POST"){
     $resposta1 = $_POST["resposta1"];
     $resposta2 = $_POST["resposta2"];
     $resposta3 = $_POST["resposta3"];
@@ -36,9 +35,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }else{
         echo "<h4>Sua pontuação foi: $cont";
     }
-    
-}
-
-
-
 ?>
