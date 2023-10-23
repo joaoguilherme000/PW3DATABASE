@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <form name="calculadora" method="post" action="Atividade-Gorjeta.php" class="janela">
+    <form name="calculadora" method="post" action="Resulta.php" class="janela">
         <h1>Calculadora de Gorjeta</h1>
 
         <label for="numero1" id="bold">Valor da conta: </label>
@@ -27,20 +27,11 @@
 
         <input id="botao" type="submit" value="Calcular Gorjeta">
 
-        <label id="bold">Valor do gorjeta: </label>
-        <?php
-            $gorjeta = 10; 
-        
-            echo'<label id="mostrar">R$' . $gorjeta .'.00</label>';
-        ?>
+        <label id="bold">Valor da gorjeta: </label>
+        <label id="mostrar">Digite o valor da conta primeiro</label>
 
         <label id="bold">Valor total: </label>
-
-        <?php
-            $total = 100; 
-            echo'<label id="mostrar">R$' . $total .'.00</label>';
-        
-        ?>  
+        <label id="mostrar">Digite o valor da conta primeiro</label>
             
     </form>
     <script src="./LengthInput.js"></script>
