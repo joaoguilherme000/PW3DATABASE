@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Estilo.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Calculadora Gorjeta</title>
 </head>
 <body>
 
-    <form name="calculadora" method="post" action="Atividade-Gorjeta.html" class="janela">
+    <form name="calculadora" method="post" action="Atividade-Gorjeta.php" class="janela">
         <h1>Calculadora de Gorjeta</h1>
 
-        <label for="valor" id="bold">Valor da conta: </label>
+        <label for="numero1" id="bold">Valor da conta: </label>
 
         <?php 
-            $valor = $_POST["numero1"];
+            $valor = isset($_POST["numero1"]) ? floatval($_POST["numero1"]) : 0;
             echo '<input type="number" name="numero1" class="numero1" id="valor" min="0" max="9999.99" value="' . $valor . '">';
         ?>
     
@@ -32,6 +33,7 @@
 
         <label id="bold">Valor da gorjeta: </label>
         <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $valor = $_POST["numero1"];
             $qualidadeServico = $_POST["selecao"];
 
@@ -48,14 +50,17 @@
             }
         
             echo'<label id="mostrar">R$' . $gorjeta .'</label>';
+        }
         ?>
+        <label id="mostrar" class="noLabel">Digite um valor</label>
 
         <label id="bold">Valor total: </label>
 
         <?php
-            $valor = $_POST["numero1"];
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $valor = isset($_POST["numero1"]) ? floatval($_POST["numero1"]) : 0;
             
-            $qualidadeServico = $_POST["selecao"];
+            $qualidadeServico = isset($_POST["selecao"]) ? floatval($_POST["selecao"]) : "";
         
             if ($qualidadeServico === "Excelente - 10%") {
                 $gorjeta = $valor * 0.10;
@@ -71,8 +76,10 @@
         
             $total = $valor + $gorjeta;
             echo'<label id="mostrar">R$' . $total .'</label>';
-        ?>  
-        <label id="mostrar"></label>
+            }
+        ?> 
+        <label id="mostrar" class="noLabel">Digite um valor</label>
+        
             
     </form>
     <script src="./LengthInput.js"></script>
