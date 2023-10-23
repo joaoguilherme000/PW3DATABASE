@@ -14,7 +14,7 @@
 
         <label for="numero1" id="bold">Valor da conta: </label>
 
-        <input type="number" name="numero1" id="bold" class="numero1" required>
+        <input type="number" name="numero1" class="numero1" required id="valor" min="0" max="9999,99">
     
         <label for="selecao" id="bold">Qualidade do serviço:</label>
 
@@ -31,20 +31,18 @@
         <?php
             $gorjeta = 10; 
         
-            echo'<label id="mostrar">R$' . $gorjeta .'</label>';
+            echo'<label id="mostrar">R$' . $gorjeta .'.00</label>';
         ?>
 
         <label id="bold">Valor total: </label>
 
         <?php
             $total = 100; 
-            echo'<label id="mostrar">R$' . $total .'</label>';
+            echo'<label id="mostrar">R$' . $total .'.00</label>';
         
         ?>  
             
-        
-
-            
     </form>
+    <script src="./LengthInput.js"></script>
 </body>
 </html>
