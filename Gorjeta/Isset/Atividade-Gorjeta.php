@@ -32,10 +32,13 @@
         <input id="botao" type="submit" value="Calcular Gorjeta">
 
         <label id="bold">Valor da gorjeta: </label>
+
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $valor = $_POST["numero1"];
-            $qualidadeServico = $_POST["selecao"];
+            $valor = 0;
+            $qualidadeServico = "0";
+            $valor = isset($_POST["numero1"]) ? floatval($_POST["numero1"]) : 0;  // só usar o isset e mandar para a mesma pagina que ele fica sempre
+            
+            $qualidadeServico = isset($_POST["selecao"]) ? ($_POST["selecao"]) : "";
 
             if ($qualidadeServico === "Excelente - 10%") {
                 $gorjeta = $valor * 0.10;
@@ -48,38 +51,14 @@
             } else {
                 $gorjeta = 0;
             }
-        
-            echo'<label id="mostrar">R$' . $gorjeta .'</label>';
-        }
+            $total = $valor + $gorjeta;
         ?>
-        <label id="mostrar" class="noLabel">Digite um valor</label>
+
+        <label id="mostrar">R$<?php echo $gorjeta; ?></label>
 
         <label id="bold">Valor total: </label>
 
-        <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $valor = isset($_POST["numero1"]) ? floatval($_POST["numero1"]) : 0;
-            
-            $qualidadeServico = isset($_POST["selecao"]) ? floatval($_POST["selecao"]) : "";
-        
-            if ($qualidadeServico === "Excelente - 10%") {
-                $gorjeta = $valor * 0.10;
-            } elseif ($qualidadeServico === "Ótimo - 8%") {
-                $gorjeta = $valor * 0.08;
-            } elseif ($qualidadeServico === "Bom - 5%") {
-                $gorjeta = $valor * 0.05;
-            } elseif ($qualidadeServico === "Ruim - 2%") {
-                $gorjeta = $valor * 0.02;
-            } else {
-                $gorjeta = 0;
-            }
-        
-            $total = $valor + $gorjeta;
-            echo'<label id="mostrar">R$' . $total .'</label>';
-            }
-        ?> 
-        <label id="mostrar" class="noLabel">Digite um valor</label>
-        
+        <label id="mostrar">R$<?php echo $total?></label>
             
     </form>
     <script src="./LengthInput.js"></script>
