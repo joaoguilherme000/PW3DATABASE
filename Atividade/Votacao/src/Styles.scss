@@ -1,5 +1,6 @@
 /* styles.scss */
 @import 'reset'; // Importa o arquivo de reset
+@import 'Responsive';
 
 $font-stack: Helvetica, sans-serif;
 $primary-color: #333;
@@ -16,19 +17,9 @@ img {
     cursor: $clicavel;
 }
 
-.content {
-    font-size: 32px;
-    flex: 1;
-    display: flex;
-    background-color: rgba(255, 255, 255, 0.822);
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+.imgContent {
+    @extend %centraliza1;
 }
-.janela {
-    background-color: rgba(42, 63, 63, 0.822);
-    border-radius: 1em;
-    padding: 25px;
-    color: #fff; 
+.content {
+    @extend %centraliza2;
 }
