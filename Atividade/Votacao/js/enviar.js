@@ -1,13 +1,10 @@
-const botoesDeEnviar = document.getElementsByClassName("button");
-var votoInput = document.getElementById("voto");
+document.addEventListener('DOMContentLoaded', function () {
+  const imgElements = document.querySelectorAll('.imgContent img');
 
-function enviando(event) {
-  var idDoElementoClicado = event.target.id;
-  votoInput.value = idDoElementoClicado;
-  votoInput = document.getElementById("voto").value = idDoElementoClicado;
-
-}
-
-for (var i = 0; i < botoesDeEnviar.length; i++) {
-  botoesDeEnviar[i].addEventListener("click", enviando);
-}
+  imgElements.forEach(function (img) {
+    img.addEventListener('click', function () {
+      const selectedTeam = img.getAttribute('alt');
+      document.getElementById('voto').value = selectedTeam;
+    });
+  });
+});
