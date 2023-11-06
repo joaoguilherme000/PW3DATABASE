@@ -1,15 +1,13 @@
-const BotaoDeEnviar = document.getElementById("Enviar");
+const botoesDeEnviar = document.getElementsByClassName("button");
+var votoInput = document.getElementById("voto");
 
-function enviando() {
-  // Use a função confirm() para mostrar uma mensagem de confirmação
-  const confirmacao = confirm("Tem certeza de que deseja enviar o formulário?");
+function enviando(event) {
+  var idDoElementoClicado = event.target.id;
+  votoInput.value = idDoElementoClicado;
+  votoInput = document.getElementById("voto").value = idDoElementoClicado;
 
-  // Se o usuário clicar em "OK" na caixa de diálogo de confirmação, a variável confirmacao será verdadeira
-  if (confirmacao) {
-    alert("Mostrando Resultado!");
-  } else {
-    alert("Cancelado");
-  }
 }
 
-BotaoDeEnviar.addEventListener("click", enviando);
+for (var i = 0; i < botoesDeEnviar.length; i++) {
+  botoesDeEnviar[i].addEventListener("click", enviando);
+}

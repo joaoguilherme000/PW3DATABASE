@@ -1,4 +1,3 @@
-
 function mostrarTime (event) {
     var idDoElementoClicado = event.target.id;
     document.getElementById("demo").innerHTML = "Você escolheu: " + idDoElementoClicado;
@@ -13,4 +12,3 @@ Corinthians.addEventListener("click", mostrarTime);
 Palmeira.addEventListener("click", mostrarTime);
 Santos.addEventListener("click", mostrarTime);
 SPaulo.addEventListener("click", mostrarTime);
-
