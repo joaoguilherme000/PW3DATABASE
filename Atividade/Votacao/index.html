@@ -7,11 +7,12 @@
     <title>Votação</title>
 </head>
 <body class="content">
-    <h1>Qual melhor clube de São Paulo?</h1>
 
-    <form name="escolha" method="post" action="Voto.php">
+    <h1 class="titulo">Qual melhor clube de São Paulo?</h1>
+    
+    <form name="escolha" method="post" action="Voto.php" class="nav">
         <input type="text" value="" style="display: none;">
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" class="button" id="Enviar">
     </form>
 
     <div class="imgContent">
@@ -21,7 +22,8 @@
         <img src="./img/Sao-Paulo.png" alt="Imagem 4" class="Sao-Paulo" id="Sao-Paulo">
     </div>  
 
-    <h3 id="demo" class="%message-shared">Faça sua Escolha</h3>
-    <script src="escolher.js"></script>
+    <h3 id="demo" class="escolhido">Faça sua Escolha</h3>
+    <script src="js/enviar.js"></script>
+    <script src="js/escolher.js"></script>
 </body>
 </html>

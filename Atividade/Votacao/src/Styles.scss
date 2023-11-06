@@ -3,23 +3,72 @@
 @import 'Responsive';
 
 $font-stack: Helvetica, sans-serif;
-$primary-color: #333;
-$tamanhoImagem: 2vh; 
+$primary-color: #2e2e2e;
+$tamanhoImagem: 15vh;
 $clicavel: pointer;
+$titulo: 5vh;
+$texto: 3vh;
 
 body {
   font: 100% $font-stack;
   color: $primary-color;
 }
+.titulo {
+    font-size: $titulo;
+}
 
 img {
     width: $tamanhoImagem;
+    height: auto;
     cursor: $clicavel;
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.4);
 }
 
 .imgContent {
     @extend %centraliza1;
+    flex-direction: row;
+    justify-content: space-evenly
 }
+
 .content {
     @extend %centraliza2;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.button {
+    border: 2px solid #3498db; 
+    border-radius: 4px; 
+    background: #3498db; 
+    color: #fff; 
+    padding: 1vh 2vh; 
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    align-self: flex-end;
+    display: inline-block;
+    font-size: 2vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background: #fff;
+    color: #3498db; 
+    cursor: $clicavel;
+}
+
+.button:focus {
+    outline: none; 
+}
+
+.escolhido {
+    font-size: $texto;
 }

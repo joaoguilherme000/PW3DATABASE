@@ -2,7 +2,6 @@
     font-size: 24px;
     flex: 1;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.822);
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -11,9 +10,9 @@
   }
 
 %centraliza2 {
-  background: linear-gradient(90deg, rgb(0, 128, 153) 0%, hsl(192, 82%, 78%) 100%);
+    background: linear-gradient(215deg, rgb(0, 128, 153) 0%, hsl(192, 82%, 78%) 100%);
     background-size: 200% 100%; /* Tamanho maior que 100% para criar o efeito de movimento */
-    animation: gradientMove 2s ease cubic-bezier(0.25, 0.1, 0.25, 1) infinite; /* Animação para mover o gradiente */
+    animation: gradientMove 1s ease cubic-bezier(0.25, 0.1, 0.25, 1) infinite; /* Animação para mover o gradiente */
     padding: 25px;
 }
 
