@@ -72,3 +72,7 @@ img:hover {
 .escolhido {
     font-size: $texto;
 }
+
+.content2 {
+    @extend %centraliza1;
+}

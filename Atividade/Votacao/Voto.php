@@ -17,9 +17,10 @@ if (isset($_COOKIE['voto'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/styles.css">
     <title>Voto</title>
 </head>
-<body>
+<body class="content2">
     <h1>Você votou em <?php  echo $voto;?></h1>
 </body>
 </html>
