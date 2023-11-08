@@ -1,6 +1,6 @@
 <?php
-if (isset($_POST['voto'])) {
-    $voto = $_POST['voto'];
+if (isset($_COOKIE['voto'])) {
+    $voto = $_COOKIE['voto'];
 
     setcookie("voto", $voto, time() + 3600 * 24 * 31); // Expira em um mês
 
