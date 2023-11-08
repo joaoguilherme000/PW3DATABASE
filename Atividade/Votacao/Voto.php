@@ -1,10 +1,10 @@
 <?php
-if (isset($_COOKIE['voto'])) {
-    $voto = $_COOKIE['voto'];
+if (isset($_POST['voto'])) {
+    $voto = $_POST['voto'];
 
     setcookie("voto", $voto, time() + 3600 * 24 * 31); // Expira em um mês
 
-    $msg = $voto;
+    $msg = "obrigado por votar";
 } else {
     $msg = "Você não votou em nenhuma opção.";
     echo $msg;
@@ -21,6 +21,6 @@ if (isset($_COOKIE['voto'])) {
     <title>Voto</title>
 </head>
 <body class="content2">
-    <h1>Você votou em <?php  echo $voto;?></h1>
+    <h1><?php  echo $msg;?></h1>
 </body>
 </html>

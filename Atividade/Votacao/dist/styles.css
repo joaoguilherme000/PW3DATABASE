@@ -29,7 +29,7 @@ img {
   height: auto;
 }
 
-.imgContent {
+.content2, .imgContent {
   font-size: 24px;
   flex: 1;
   display: flex;
