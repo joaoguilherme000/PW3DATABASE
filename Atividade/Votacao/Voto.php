@@ -6,8 +6,7 @@ if (isset($_COOKIE['voto'])) {
 
     $msg = "obrigado por votar";
 } else {
-    $msg = "Você não votou em nenhuma opção.";
-    echo $msg;
+    $msg = "Voce ja votou";
 }
 ?>
 
