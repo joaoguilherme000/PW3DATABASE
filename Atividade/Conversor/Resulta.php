@@ -30,7 +30,7 @@
 
         <label for="para" id="bold">Para:</label>
 
-        <select name="selecao" class="para">
+        <select name="selecao2" id="selecao2"class="para">
             <option>Metro(s)</option>
             <option>Quilômetros(s)</option>
             <option>Centímetros(s)</option>
@@ -41,8 +41,52 @@
 
         <label id="bold">Resultado: </label>
         <label id="mostrar">.</label>
+
+        <?php
+
+            $valor = $_POST["quantidade"];
+            $conta = $_POST["selecao"];
             
-        <label style="display: none;">x quilometro(s) equivalem a y Metros(s)</label>
+            // Função para converter metros para outras unidades
+            function converterUnidades($valor, $unidadeDestino) {
+                switch ($unidadeDestino) {
+                    case "Quilômetros(s)":
+                        return $valor / 1000;
+                    case "Centímetros(s)":
+                        return $valor * 100;
+                    case "Milímetro(s)":
+                        return $valor * 1000;
+                    default:
+                        return $valor;
+                }
+            }
+
+            // Converter a quantidade para a unidade desejada
+            $valorConvertido = converterUnidades($valor, $_POST["selecao"]);
+
+            // Calcular o resultado com base na unidade de destino
+            switch ($conta) {
+                case "Metro(s)":
+                    $resulta = $valorConvertido;
+                    break;
+                case "Quilômetros(s)":
+                    $resulta = $valorConvertido * 0.10;
+                    break;
+                case "Centímetros(s)":
+                    $resulta = $valorConvertido * 0.05;
+                    break;
+                case "Milímetro(s)":
+                    $resulta = $valorConvertido * 0.02;
+                    break;
+                default:
+                    $resulta = 0;
+                    break;
+            }
+        
+            echo '<label id="mostrar">' . $resulta .'</label>';
+        ?>
+            
+        <label style="display: none;"><?php echo $conta ?>quilometro(s) equivalem a <?php echo $resulta ?> Metros(s)</label>
     </form>
     <script src="./LengthInput.js"></script>
 </body>
