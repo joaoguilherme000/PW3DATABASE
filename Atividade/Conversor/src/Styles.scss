@@ -77,7 +77,7 @@ h1 {
 .para {
     @extend %button;
     color: #000000;
-    font-size:$texto;
+    font-size: $texto;
     cursor: pointer;
     width: 45vh;
 }
