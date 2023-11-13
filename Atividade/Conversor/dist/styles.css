@@ -52,7 +52,6 @@ body {
 }
 
 body {
-  font-size: 18px;
   background: linear-gradient(45deg, #beffdb, #949494, #b6fcd5, #a5a5a5);
   background-size: 400% 100%;
   animation: gradientAnimation 2s ease infinite;
@@ -62,6 +61,7 @@ body {
 }
 
 body h1 {
+  font-size: 3vh;
   font-weight: bold;
 }
 
@@ -90,14 +90,14 @@ h1 {
 
 .quantidade {
   color: #000000;
-  font-size: 16px;
+  font-size: 2vh;
   cursor: pointer;
   width: 45vh;
 }
 
 #selecao {
   color: #000000;
-  font-size: 16px;
+  font-size: 2vh;
   cursor: pointer;
   width: 45vh;
 }
@@ -114,7 +114,7 @@ h1 {
 
 .para {
   color: #000000;
-  font-size: 16px;
+  font-size: 2vh;
   cursor: pointer;
   width: 45vh;
 }
@@ -122,7 +122,7 @@ h1 {
 /*  mostrar os valores  */
 #mostrar {
   color: #000000;
-  font-size: 16px;
+  font-size: 2vh;
   cursor: pointer;
   width: 45vh;
 }
@@ -131,7 +131,7 @@ h1 {
   background-color: #37ab69;
   color: #ffffff;
   padding: 1vh 0.8vh;
-  font-size: 16px;
+  font-size: 2vh;
   border: none;
   border-radius: 5px;
   cursor: pointer;

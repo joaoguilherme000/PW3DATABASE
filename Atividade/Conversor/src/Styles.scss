@@ -7,11 +7,10 @@ $font-stack: Helvetica, sans-serif;
 $primary-color: #2e2e2e;
 $tamanhoImagem: 15vh;
 $clicavel: pointer;
-$titulo: 5vh;
-$texto: 3vh;
+$titulo: 3vh;
+$texto: 2vh;
 
 body {
-    font-size: 18px;
     @extend %centraliza1;
     background: linear-gradient(45deg, #beffdb, #949494, #b6fcd5, #a5a5a5);
     background-size: 400% 100%;
@@ -22,6 +21,7 @@ body {
 }
 
 body h1 {
+    font-size: $titulo;
    font-weight: bold;
 }
 
@@ -51,7 +51,7 @@ h1 {
 .quantidade {
     @extend %button;
     color: #000000;
-    font-size: 16px;
+    font-size: $texto;
     cursor: pointer;
     width: 45vh;
 }
@@ -59,7 +59,7 @@ h1 {
 #selecao {
     @extend %button;
     color: #000000;
-    font-size: 16px;
+    font-size: $texto;
     cursor: pointer;
     width: 45vh;
 }
@@ -77,7 +77,7 @@ h1 {
 .para {
     @extend %button;
     color: #000000;
-    font-size: 16px;
+    font-size:$texto;
     cursor: pointer;
     width: 45vh;
 }
@@ -86,7 +86,7 @@ h1 {
 #mostrar {
     @extend %button;
     color: #000000;
-    font-size: 16px;
+    font-size: $texto;
     cursor: pointer;
     width: 45vh;
 }
@@ -95,7 +95,7 @@ h1 {
     background-color: #37ab69; 
     color: #ffffff; 
     padding: 1vh .8vh;
-    font-size: 16px; 
+    font-size: $texto; 
     border: none; 
     border-radius: 5px; 
     cursor: pointer;
