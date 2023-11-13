@@ -1,0 +1,26 @@
+%centraliza1 {
+    font-size: 24px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 70%;
+  }
+
+%centraliza2 {
+    background: linear-gradient(215deg, rgb(0, 128, 153) 0%, hsl(192, 82%, 78%) 100%);
+    background-size: 200% 100%; /* Tamanho maior que 100% para criar o efeito de movimento */
+    animation: gradientMove 1s ease cubic-bezier(0.25, 0.1, 0.25, 1) infinite; /* Animação para mover o gradiente */
+    padding: 25px;
+}
+
+@keyframes gradientMove {
+  0% {
+      background-position: 100% 0;
+  }
+  100% {
+      background-position: -100% 0;
+  }
+}
