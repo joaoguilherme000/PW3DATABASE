@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <form name="calculadora" method="POST" action="Resulta.php" class="janela">
+    <form name="calculadora" method="POST" action="index.php" class="janela">
         <h1>Conversor de Unidades</h1>
 
         <label for="quantidade" id="bold">Digite a quantidade: </label>
