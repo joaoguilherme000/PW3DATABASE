@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/styles.css">
-    <title>Calculadora Gorjeta</title>
+    <title>Conversor de Unidades</title>
 </head>
 <body>
 
@@ -14,7 +14,7 @@
 
         <label for="quantidade" id="bold">Digite a quantidade: </label>
 
-        <input type="number" name="quantidade" class="quantidade" id="valor" min="0" max="9999.99" value="<?= $_POST["quantidade"] ?? '' ?>">
+        <input type="number" name="quantidade" class="quantidade" id="valor" required value="<?= $_POST["quantidade"] ?? '' ?>">
     
         <label for="selecao" id="bold">De:</label>
         <select name="selecao" id="selecao">
@@ -126,10 +126,7 @@
             }
         ?>
             
-            
-        <!-- Elemento oculto que será exibido apenas se $valorConvertido não estiver vazio -->
-        <label class="mostrar" style="display: <?= $styleDisplay; ?>"><?php echo  $quantidade. " ". $unidadeDe. " equivalem a " .$valorConvertido. " " .$unidadePara ?></label>
+        <label class="mostrar" style="display: <?= isset($valorConvertido) && $valorConvertido !== 0 ? 'block' : 'none'; ?>; align-self: center;"><?php echo  $quantidade. " ". $unidadeDe. " equivalem a " .$valorConvertido. " " .$unidadePara ?></label>
     </form>
-    <script src="./LengthInput.js"></script>
 </body>
 </html>
