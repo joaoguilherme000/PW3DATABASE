@@ -114,10 +114,21 @@
                     break;
             }
         
-            echo '<label id="mostrar">'.$unidadeDe. ": ". $quantidade. " = ". $unidadePara . " ". $valorConvertido .'</label>';
+            echo '<label id="mostrar">'.$valorConvertido .'</label>';
+
+            $styleDisplay = 'none';
+
+            // Verifique se $valorConvertido está definido e não é vazio
+            
+            if (isset($valorConvertido) && $valorConvertido !== '') {
+                // Se $valorConvertido estiver definido, altere o estilo de exibição
+                $styleDisplay = 'block';
+            }
         ?>
             
-        <label style="display: none;"><?php echo $conta ?>quilometro(s) equivalem a <?php echo $resulta ?> Metros(s)</label>
+            
+        <!-- Elemento oculto que será exibido apenas se $valorConvertido não estiver vazio -->
+        <label class="mostrar" style="display: <?= $styleDisplay; ?>"><?php echo  $quantidade. " ". $unidadeDe. " equivalem a " .$valorConvertido. " " .$unidadePara ?></label>
     </form>
     <script src="./LengthInput.js"></script>
 </body>
