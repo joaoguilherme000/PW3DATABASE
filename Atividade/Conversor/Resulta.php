@@ -9,81 +9,112 @@
 </head>
 <body>
 
-    <form name="calculadora" method="post" action="Resulta.php" class="janela">
+    <form name="calculadora" method="POST" action="Resulta.php" class="janela">
         <h1>Conversor de Unidades</h1>
 
         <label for="quantidade" id="bold">Digite a quantidade: </label>
 
-        <?php 
-            $valor = $_POST["quantidade"];
-            echo '<input type="number" name="quantidade" class="quantidade" id="valor" min="0" max="9999.99" value="' . $valor . '">';
-        ?>
+        <input type="number" name="quantidade" class="quantidade" id="valor" min="0" max="9999.99" value="<?= $_POST["quantidade"] ?? '' ?>">
     
         <label for="selecao" id="bold">De:</label>
-
         <select name="selecao" id="selecao">
-            <option>Metro(s)</option>
-            <option>Quilômetros(s)</option>
-            <option>Centímetros(s)</option>
-            <option>Milímetro(s)</option>
+            <?php echo gerarOptions(['Metro(s)', 'Quilômetros(s)', 'Centímetros(s)', 'Milímetro(s)'], $_POST['selecao'] ?? ''); ?>
         </select>
 
         <label for="para" id="bold">Para:</label>
-
-        <select name="selecao2" id="selecao2"class="para">
-            <option>Metro(s)</option>
-            <option>Quilômetros(s)</option>
-            <option>Centímetros(s)</option>
-            <option>Milímetro(s)</option>
+        <select name="selecao" class="para">
+            <?php echo gerarOptions(['Metro(s)', 'Quilômetros(s)', 'Centímetros(s)', 'Milímetro(s)'], $_POST['selecao_para'] ?? ''); ?>
         </select>
 
-        <input id="botao" type="submit" value="Converter">
+        <input id="converter" type="submit" value="Converter">
 
         <label id="bold">Resultado: </label>
-        <label id="mostrar">.</label>
 
         <?php
+            $quantidade = isset($_POST["quantidade"]) ? $_POST["quantidade"] : 0;
 
-            $valor = $_POST["quantidade"];
-            $conta = $_POST["selecao"];
+            $unidadeDe = isset($_POST["selecao"]) ? $_POST["selecao"] : 'Metro(s)';
+            $unidadePara = isset($_POST["selecao_para"]) ? $_POST["selecao_para"] : 'Metro(s)';
+
+            function gerarOptions($opcoes, $selecionado) {
+                $htmlopcoes = '';
+                foreach ($opcoes as $opcao) {
+                    $selected = ($opcao === $selecionado) ? 'selected' : '';
+                    $htmlopcoes .= "<option $selected>$opcao</option>";
+                }
+                return $htmlopcoes;
+            }
             
-            // Função para converter metros para outras unidades
-            function converterUnidades($valor, $unidadeDestino) {
-                switch ($unidadeDestino) {
+            function converterMetros($quantidade, $unidadePara) {
+                switch ($unidadePara) {
                     case "Quilômetros(s)":
-                        return $valor / 1000;
+                        return $quantidade / 1000;
                     case "Centímetros(s)":
-                        return $valor * 100;
+                        return $quantidade * 100;
                     case "Milímetro(s)":
-                        return $valor * 1000;
+                        return $quantidade * 1000;
                     default:
-                        return $valor;
+                        return $quantidade;
                 }
             }
 
-            // Converter a quantidade para a unidade desejada
-            $valorConvertido = converterUnidades($valor, $_POST["selecao"]);
+            function converterKilometros($quantidade, $unidadePara) {
+                switch ($unidadePara) {
+                    case "Metro(s)":
+                        return $quantidade * 1000;
+                    case "Centímetros(s)":
+                        return $quantidade * 100000;
+                    case "Milímetro(s)":
+                        return $quantidade * 1000000;
+                    default:
+                        return $quantidade;
+                }
+            }
 
-            // Calcular o resultado com base na unidade de destino
-            switch ($conta) {
+            function converterCentimetros($quantidade, $unidadePara) {
+                switch ($unidadePara) {
+                    case "Quilômetros(s)":
+                        return $quantidade / 100000;
+                    case "Metro(s)":
+                        return $quantidade / 100;
+                    case "Milímetro(s)":
+                        return $quantidade * 10;
+                    default:
+                        return $quantidade;
+                }
+            }
+
+            function converterMilimetros($quantidade, $unidadePara) {
+                switch ($unidadePara) {
+                    case "Quilômetros(s)":
+                        return $quantidade / 1000000;
+                    case "Metro(s)":
+                        return $quantidade / 1000;
+                    case "Centímetros(s)":
+                        return $quantidade / 10;
+                    default:
+                        return $quantidade;
+                }
+            }
+
+            $valorConvertido;
+
+            switch ($unidadeDe) {
                 case "Metro(s)":
-                    $resulta = $valorConvertido;
-                    break;
+                    $valorConvertido = converterMetros($quantidade, $unidadePara);
+                    break; 
                 case "Quilômetros(s)":
-                    $resulta = $valorConvertido * 0.10;
+                    $valorConvertido = converterKilometros($quantidade, $unidadePara);
                     break;
                 case "Centímetros(s)":
-                    $resulta = $valorConvertido * 0.05;
+                    $valorConvertido = converterCentimetros($quantidade, $unidadePara);
                     break;
                 case "Milímetro(s)":
-                    $resulta = $valorConvertido * 0.02;
-                    break;
-                default:
-                    $resulta = 0;
+                    $valorConvertido = converterMilimetros($quantidade, $unidadePara);
                     break;
             }
         
-            echo '<label id="mostrar">' . $resulta .'</label>';
+            echo '<label id="mostrar">'. $valorConvertido .'</label>';
         ?>
             
         <label style="display: none;"><?php echo $conta ?>quilometro(s) equivalem a <?php echo $resulta ?> Metros(s)</label>
