@@ -114,7 +114,7 @@
                     break;
             }
         
-            echo '<label id="mostrar">'. $valorConvertido .'</label>';
+            echo '<label id="mostrar">'.$unidadeDe. ": ". $quantidade. " = ". $unidadePara . " ". $valorConvertido .'</label>';
         ?>
             
         <label style="display: none;"><?php echo $conta ?>quilometro(s) equivalem a <?php echo $resulta ?> Metros(s)</label>
