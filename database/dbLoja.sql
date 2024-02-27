@@ -1,5 +1,7 @@
 -- primerio de tudo entra no xamp shell e faz MySQL -h localhost -u root -p
 
+-- source c:\script_sql\exemplo.sql
+
 -- apagar banco de dados
 drop database dbloja;
 
