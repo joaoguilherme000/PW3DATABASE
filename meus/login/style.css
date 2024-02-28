@@ -1,0 +1,68 @@
+.content {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #575757, #fcffdf, #a0a0a0, #abd1fd);
+    background-size: 400% 100%;
+    animation: gradientAnimation 10s ease infinite;
+    width: 100%;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.inicio {
+    background-color: #1da888;
+    border-radius: 1em;
+    color: #fff;
+}
+
+.inicio h1 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.inicio h2 {
+    font-size: 14px;
+    border-radius: 1em;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    border: 0.5px solid white;
+}
+
+.inicio h3 {
+    font-size: 14px;
+    font-weight: bold;
+}
+.janela {
+    background-color: rgba(255, 255, 255, 0.822);
+    border-radius: 1em;
+    padding: 5vh;
+    color: #fff; 
+}
+
+header {
+    background-color: #333; 
+    color: #fff; 
+    padding: 10px; 
+}
+
+nav ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; 
+    margin-right: 20px; 
+}
+
+nav a {
+    text-decoration: none; 
+    color: #fff; 
+}
+
+
+nav a:hover {
+    text-decoration: underline;
+}
