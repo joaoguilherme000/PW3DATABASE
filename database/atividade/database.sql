@@ -12,7 +12,7 @@ create table tbMedico(
 idMedico int not null auto_increment,
 nmMedico varchar(45) not null,
 telefoneMedico varchar(15) not null,
-primary key(codFunc));
+primary key(idMedico));
  
 create table tbPaciente(
 idPaciente int not null auto_increment,
@@ -33,9 +33,9 @@ Medico_idMedico int,
 Paciente_idPaciente int not null,
 ReceitaMedica_idReceitaMedica int not null,
 primary key(idConsulta),
-foreign key(idMedico) references tbMedico(idMedico),
-foreign key(idPaciente) references tbPaciente(idPaciente),
-foreign key(idReceitaMedica) references tbReceitaMedica(idReceitaMedica)
+foreign key(Medico_idMedico) references tbMedico(idMedico),
+foreign key(Paciente_idPaciente) references tbPaciente(idPaciente),
+foreign key(ReceitaMedica_idReceitaMedica) references tbReceitaMedica(idReceitaMedica)
 );
  
 -- visualizar as tabelas criadas
@@ -44,7 +44,7 @@ show tables;
 -- visualizando a estrutura das tabelas
 desc tbMedico;
 desc tbPaciente;
-desc tbClientes;
+desc tbReceitaMedica;
 desc tbConsulta;
  
 -- Inserindo registros nas tabelas
@@ -70,12 +70,13 @@ insert into tbReceitaMedica(idReceitaMedica,descricao)
 insert into tbReceitaMedica(idReceitaMedica,descricao)
     values(3,'Tomar todos os dias');
 
-insert into tbConsulta(dataVenda,qtde,valor,codUsu,codProd,codcli)
-    values('2024/03/01',5,250.00,1,1,1);
-insert into tbConsulta(dataVenda,qtde,valor,codUsu,codProd,codcli)
-    values('2024/03/01',3,1250.00,3,2,3);
-insert into tbConsulta(dataVenda,qtde,valor,codUsu,codProd,codcli)
-    values('2024/03/01',2,850.00,2,4,2);
+insert into tbConsulta(idConsulta,dt_consulta,Medico_idMedico,Paciente_idPaciente,ReceitaMedica_idReceitaMedica)
+    values(1,'2024/09/11',1,1,1);
+insert into tbConsulta(idConsulta,dt_consulta,Medico_idMedico,Paciente_idPaciente,ReceitaMedica_idReceitaMedica)
+    values(2,'2024/07/09',2,2,2);
+insert into tbConsulta(idConsulta,dt_consulta,Medico_idMedico,Paciente_idPaciente,ReceitaMedica_idReceitaMedica)
+    values(3,'2024/06/24',3,3,3);
+
  
 -- o conteúdo das tabelas
 select * from tbMedico;
