@@ -50,11 +50,15 @@ desc tbConsulta;
 -- Inserindo registros nas tabelas
  
 insert into tbMedico(idMedico,nmMedico,telefoneMedico)
-    values(1,'Jorge da Silva','96243-8346');
+    values(1,'Jorge da Silva','96723-8346');
 insert into tbMedico(idMedico,nmMedico,telefoneMedico)
-    values(2,'Roberta Gomes','96243-8652');
+    values(2,'Roberta Gomes','96624-8652');
 insert into tbMedico(idMedico,nmMedico,telefoneMedico)
     values(3,'Silvana Lima','94364-5312');
+insert into tbMedico(idMedico,nmMedico,telefoneMedico)
+    values(4,'Maria Oliveira','97654-3210');
+insert into tbMedico(idMedico,nmMedico,telefoneMedico)
+    values(5,'Pedro Santos','94321-0987');
 
 insert into tbPaciente(idPaciente,nmPaciente,telefonePaciente,convenio)
     values(1,'Maria das Neves','90253-2354','sem convenio');
@@ -62,13 +66,21 @@ insert into tbPaciente(idPaciente,nmPaciente,telefonePaciente,convenio)
     values(2,'José Rodrigues','95132-6432','');
 insert into tbPaciente(idPaciente,nmPaciente,telefonePaciente,convenio)
     values(3,'Lucas Lira','95312-1346','com convenio');
+insert into tbPaciente(idPaciente,nmPaciente,telefonePaciente,convenio)
+    values(4,'Carlos Oliveira','97654-3210','convenio trabalhista');
+insert into tbPaciente(idPaciente,nmPaciente,telefonePaciente,convenio)
+    values(5,'Mariana Silva','97654-3210','');
 
 insert into tbReceitaMedica(idReceitaMedica,descricao)
-    values(1,'');
+    values(1,'Paracetamol 500mg - Tomar 1 comprimido a cada 6 horas');
 insert into tbReceitaMedica(idReceitaMedica,descricao)
-    values(2,'Tomar a cada 8 horas');
+    values(2,'Amoxicilina 500mg - Tomar 1 comprimido de 8 em 8 horas');
 insert into tbReceitaMedica(idReceitaMedica,descricao)
-    values(3,'Tomar todos os dias');
+    values(3,'Dipirona 1g - Tomar 12 comprimidos a cada 12 horas');
+insert into tbReceitaMedica(idReceitaMedica,descricao)
+    values(4,'Sinvastatina 20mg - Tomar 1 comprimido à noite após a refeição');
+insert into tbReceitaMedica(idReceitaMedica,descricao)
+    values(5,'Omeprazol 20mg - Tomar 1 comprimido antes do café da manhã');
 
 insert into tbConsulta(idConsulta,dt_consulta,Medico_idMedico,Paciente_idPaciente,ReceitaMedica_idReceitaMedica)
     values(1,'2024/09/11',1,1,1);
@@ -76,6 +88,10 @@ insert into tbConsulta(idConsulta,dt_consulta,Medico_idMedico,Paciente_idPacient
     values(2,'2024/07/09',2,2,2);
 insert into tbConsulta(idConsulta,dt_consulta,Medico_idMedico,Paciente_idPaciente,ReceitaMedica_idReceitaMedica)
     values(3,'2024/06/24',3,3,3);
+insert into tbConsulta(idConsulta,dt_consulta,Medico_idMedico,Paciente_idPaciente,ReceitaMedica_idReceitaMedica)
+    values(4,'2024/08/21',4,4,4);
+insert into tbConsulta(idConsulta,dt_consulta,Medico_idMedico,Paciente_idPaciente,ReceitaMedica_idReceitaMedica)
+    values(5,'2024/02/07',5,5,5);
 
  
 -- o conteúdo das tabelas
