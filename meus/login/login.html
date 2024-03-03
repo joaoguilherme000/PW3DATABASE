@@ -8,31 +8,40 @@
     <link rel="stylesheet" href="./style.css">
     <title>Formulário de Cadastro</title>
 </head>
-<header class="conteiner">
-    <nav>
-        <h1>ATIVIDADE</h1>
-    </nav>
-</header>
 <body >
     <div class="content">
         <div class="inicio">
-            <h1>Seja bem vindo!</h1>
-            <h2>para se manter conectado</h2>
+            <h1>Bem vindo de volta!</h1>
+            <h2>Para se manter conectado</h2>
             <h2>coloque suas informações de login</h2>
             <h3>Entrar</h3>
         </div>
         <div class="janela">
-            <h1>Crie sua conta</h1>
-            <form name="cadastro" method="post" action="mostrar.php">
-                <label for="usuario">Nome: </label>
-                <input type="text" name="usuario" id="usuario" autofocus autocomplete="off" size="20" maxlength="9" required> <br/><br/>
-                <label for="sobrenome">Sobrenome: </label>
-                <input type="password" name="sobrenome" id="sobrenome" required><br/><br/>
-                <label for="idade">Idade: </label>
-                <input type="text" name="idade" id="idade" autofocus autocomplete="off" size="20" maxlength="3" required> <br/><br/>
-                <input type="submit" value="Enviar">
+            <h1 class="titulo">Crie sua conta</h1>
+            <div class="socials">
+                <img src=".\img\social1.png" alt="facebook">
+                <img src=".\img\social2.png" alt="google">
+                <img src=".\img\social3.png" alt="linkedin">
+            </div>
+            <h2 class="textTop">Ou use seus dados para se registrar:</h2>
+            <form name="cadastro" method="post" action="mostrar.php" class="form">
+                <div class="inputStyle">
+                    <img src=".\img\user.png" alt="userIcon">
+                    <label for="usuario">Nome</label>
+                    <input type="text" name="usuario" id="usuario" autocomplete="off" size="20" maxlength="50" required>
+                </div>
+                <div class="inputStyle2">
+                    <img src=".\img\email.png" alt="emailIcon">
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" name="sobrenome" id="sobrenome" required>
+                </div>
+                <div class="inputStyle3">
+                    <img src=".\img\lock.png" alt="lockIcon">
+                    <label for="idade">Idade</label>
+                    <input type="text" name="idade" id="idade" autofocus autocomplete="off" size="20" maxlength="3" required> <br/><br/>
+                </div>
+                <input type="submit" value="inscrever-se" class="enviar">
             </form>
-            <h2>inscrever-se</h2>
         </div>
     </div>
 </body>

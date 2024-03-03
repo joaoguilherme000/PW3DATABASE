@@ -3,66 +3,219 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, #575757, #fcffdf, #a0a0a0, #abd1fd);
-    background-size: 400% 100%;
+    background: linear-gradient(0deg, #e5e5e5, #cdcdcd);
+    background-size: 100% 100%;
     animation: gradientAnimation 10s ease infinite;
     width: 100%;
     height: 100%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .inicio {
-    background-color: #1da888;
-    border-radius: 1em;
+    background-color: #4aaf97;
+    border-bottom-left-radius: 1em;
+    border-top-left-radius: 1em;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    width: 65vh;
 }
 
 .inicio h1 {
-    font-size: 18px;
+    font-size: 5vh;
     font-weight: bold;
 }
 
 .inicio h2 {
-    font-size: 14px;
-    border-radius: 1em;
-    padding-left: 2vh;
-    padding-right: 2vh;
-    border: 0.5px solid white;
+    font-size: 2.8vh;
+    color: #cdcdcd;
 }
 
 .inicio h3 {
-    font-size: 14px;
+    margin-top: 3.5vh;
+    font-size: 2vh;
     font-weight: bold;
+    border-radius: 8em;
+    padding-left: 9vh;
+    padding-right: 9vh;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    border: 2px solid white;
 }
 .janela {
-    background-color: rgba(255, 255, 255, 0.822);
-    border-radius: 1em;
+    background-color: #fff;
+    border-bottom-right-radius: 1em;
+    border-top-right-radius: 1em;
     padding: 5vh;
-    color: #fff; 
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    width: 96vh;
 }
 
-header {
-    background-color: #333; 
-    color: #fff; 
-    padding: 10px; 
+.janela .titulo{
+    font-size: 5vh;
+    font-weight: bold;
+    color: #4aaf97;
 }
 
-nav ul {
-    list-style-type: none; 
-    margin: 0;
-    padding: 0;
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5vh;
+    height: 7vh;
+    width: 25vh;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
 }
 
-nav ul li {
-    display: inline; 
-    margin-right: 20px; 
+.socials img {
+    width: 80%;
+    height: 80%;
+    cursor: pointer;
 }
 
-nav a {
-    text-decoration: none; 
-    color: #fff; 
+.janela .textTop {
+    font-size: 2.4vh;
+    color: #b8b8b8;
+    margin-bottom: 4vh;
 }
 
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-nav a:hover {
-    text-decoration: underline;
+.inputStyle {
+    background-color: #ECF0F1;
+    height: 8vh;
+    width: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1.2vh;
+    margin-bottom: 2vh;
+}
+
+.inputStyle img {
+    width: 5%;
+    height: 35%;
+}
+
+.inputStyle label{
+    font-size: 2.4vh;
+    color: #818181;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.inputStyle input {
+    background-color: #ffffff00;
+    border: none;
+    font-size: 2.4vh;
+    outline: none;
+    height: 100%;
+    width: 75%;
+    margin-top: 4px;
+
+}
+
+/* SEGUNDO INPUT*/
+.inputStyle2 {
+    background-color: #ECF0F1;
+    height: 8vh;
+    width: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1.2vh;
+    margin-bottom: 2vh;
+}
+
+.inputStyle2 img {
+    width: 5%;
+    height: 35%;
+}
+
+.inputStyle2 label{
+    font-size: 2.4vh;
+    color: #818181;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.inputStyle2 input {
+    background-color: #ffffff00;
+    border: none;
+    font-size: 2.4vh;
+    outline: none;
+    height: 95%;
+    margin-top: 4px;
+    width: 66%;
+}
+
+/* TERCEIRO INPUT*/
+.inputStyle3 {
+    background-color: #ECF0F1;
+    height: 8vh;
+    width: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1.2vh;
+    margin-bottom: 2vh;
+}
+
+.inputStyle3 img {
+    width: 5%;
+    height: 35%;
+}
+
+.inputStyle3 label{
+    font-size: 2.4vh;
+    color: #818181;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.inputStyle3 input {
+    background-color: #ffffff00;
+    border: none;
+    font-size: 2.4vh;
+    outline: none;
+    height: 100%;
+    width: 75%;
+    margin-top: 4px;
+}
+
+.enviar {
+    border: none;
+    color: white;
+    background-color: #4aaf97;
+    margin-top: 3.5vh;
+    font-size: 2vh;
+    font-weight: bold;
+    border-radius: 8em;
+    padding-left: 9vh;
+    padding-right: 9vh;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
 }

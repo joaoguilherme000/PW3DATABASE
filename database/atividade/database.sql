@@ -67,9 +67,9 @@ insert into tbPaciente(idPaciente,nmPaciente,telefonePaciente,convenio)
 insert into tbPaciente(idPaciente,nmPaciente,telefonePaciente,convenio)
     values(3,'Lucas Lira','95312-1346','com convenio');
 insert into tbPaciente(idPaciente,nmPaciente,telefonePaciente,convenio)
-    values(4,'Carlos Oliveira','97654-3210','convenio trabalhista');
+    values(4,'Carlos Oliveira','97666-3210','convenio trabalhista');
 insert into tbPaciente(idPaciente,nmPaciente,telefonePaciente,convenio)
-    values(5,'Mariana Silva','97654-3210','');
+    values(5,'Mariana Silva','97654-3666','');
 
 insert into tbReceitaMedica(idReceitaMedica,descricao)
     values(1,'Paracetamol 500mg - Tomar 1 comprimido a cada 6 horas');
