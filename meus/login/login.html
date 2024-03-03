@@ -28,21 +28,28 @@
                 <div class="inputStyle">
                     <img src=".\img\user.png" alt="userIcon">
                     <label for="usuario">Nome</label>
-                    <input type="text" name="usuario" id="usuario" autocomplete="off" size="20" maxlength="50" required>
+                    <input type="text" name="usuario" id="usuario" autocomplete="on" size="20" maxlength="50" required>
                 </div>
                 <div class="inputStyle2">
                     <img src=".\img\email.png" alt="emailIcon">
                     <label for="sobrenome">Sobrenome</label>
-                    <input type="text" name="sobrenome" id="sobrenome" required>
+                    <input type="text" name="sobrenome" id="sobrenome" autocomplete="on" maxlength="50" required>
                 </div>
                 <div class="inputStyle3">
                     <img src=".\img\lock.png" alt="lockIcon">
                     <label for="idade">Idade</label>
-                    <input type="text" name="idade" id="idade" autofocus autocomplete="off" size="20" maxlength="3" required> <br/><br/>
+                    <input type="number" name="idade" id="idade" autocomplete="on" size="20" maxlength="3" max="120" oninput="this.value = this.value.slice(0, 3)" required>
                 </div>
                 <input type="submit" value="inscrever-se" class="enviar">
             </form>
         </div>
     </div>
+    <script>
+        document.getElementById('idade').addEventListener('input', function() {
+            if (this.value > 120) {
+                this.value = 120;
+            }
+        });
+    </script>
 </body>
 </html>
