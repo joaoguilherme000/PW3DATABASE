@@ -28,12 +28,12 @@
                 <div class="inputStyle">
                     <img src=".\img\user.png" alt="userIcon">
                     <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" autocomplete="on" size="20" maxlength="50" required>
+                    <input type="text" name="nome" id="nome" autocomplete="on" size="20" maxlength="15" required>
                 </div>
                 <div class="inputStyle2">
                     <img src=".\img\email.png" alt="emailIcon">
                     <label for="sobrenome">Sobrenome</label>
-                    <input type="text" name="sobrenome" id="sobrenome" autocomplete="on" maxlength="50" required>
+                    <input type="text" name="sobrenome" id="sobrenome" autocomplete="on" maxlength="15" required>
                 </div>
                 <div class="inputStyle3">
                     <img src=".\img\lock.png" alt="lockIcon">
