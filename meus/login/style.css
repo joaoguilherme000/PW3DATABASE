@@ -223,11 +223,11 @@
 }
 
 .data {
-    font-size: 14px;
+    font-size: 1.4vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     background: linear-gradient(0deg, #f0f0f0, #e7e7e7);
     background-size: 100% 100%;
     width: 100%;
@@ -235,10 +235,48 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.header {
-    position: absolute;
-    top: 0;
-    margin-top: 25vh;
+.database {
+    background-color: #fff;
+    border-bottom-right-radius: 1em;
+    border-top-right-radius: 1em;
+    padding: 10vh;
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    height: 80vh;
+    width: 96vh;
+}
+
+.tables {
+    display: flex;
+    flex-direction: row;
+}
+
+.tb {
+    height: 7vh;
+    width: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.infos {
+    display: flex;
+    flex-direction: row;
+}
+
+.info {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 10vh;
+    width: 30%;
+    border-radius: 0.1em;
+    background-color: #2f90f7;
+    margin-bottom: 1vh;
 }
 
 .rowData{
@@ -272,4 +310,17 @@
     padding-bottom: 1.5vh;
     cursor: pointer;
     background-color: #4aaf97;
+}
+
+.user {
+    background-color: #4aaf97;
+    border-bottom-left-radius: 1em;
+    border-top-left-radius: 1em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    width: 65vh;
 }
