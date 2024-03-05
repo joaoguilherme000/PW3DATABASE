@@ -27,8 +27,8 @@
             <form name="cadastro" method="post" action="mostrar.php" class="form">
                 <div class="inputStyle">
                     <img src=".\img\user.png" alt="userIcon">
-                    <label for="usuario">Nome</label>
-                    <input type="text" name="usuario" id="usuario" autocomplete="on" size="20" maxlength="50" required>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" autocomplete="on" size="20" maxlength="50" required>
                 </div>
                 <div class="inputStyle2">
                     <img src=".\img\email.png" alt="emailIcon">
