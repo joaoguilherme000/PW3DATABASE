@@ -1,0 +1,48 @@
+.content {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 100%;
+    min-width: 99.5%;
+    font-family:'Oxygen';
+    padding: 0px;
+    margin: 0px;
+    background-color: #d2eff3;
+}
+
+.alertDiv{
+    height: 72%;
+    width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 1;
+}
+
+.alerta {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #1c384e;
+}
+
+.footer {
+    margin-top: 6vh;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.block {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    height: 39%;
+    width: 100%;
+    background-color: #91aecc;
+}
