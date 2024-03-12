@@ -38,43 +38,29 @@
 }
   
 @media only screen and (max-width: 768px) {
-  .configTitle {
-    font-size: 6vh;
-  }
+  
 }
 
 @media only screen and (max-width: 691px) {
-  .configContainer {
 
-  }
 }
 
 @media only screen and (max-width: 666px) {
-  .configTitle {
-    font-size: 5vh;
-  }
+
 }
 
 @media only screen and (max-width: 633px) {
-  .telaConfig {
 
-  }
 }
 
 @media only screen and (max-width: 529px) {
-  .configTitle {
-    font-size: 6vh;
-  }
+
 }
 
 @media only screen and (max-width: 421px) {
-  .configTitle {
-    font-size: 4.3vh;
-  }
+
 }
 
 @media only screen and (max-width: 356px) {
-  .configTitle {
-    font-size: 4vh;
-  }
+
 }

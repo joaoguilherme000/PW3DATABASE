@@ -8,7 +8,6 @@ use dbPessoa;
 CREATE TABLE tbPessoa(
 codigo int not null auto_increment,
 nome VARCHAR(100),
-sobrenome VARCHAR(100),
 idade INT,
 primary key(codigo));
 
