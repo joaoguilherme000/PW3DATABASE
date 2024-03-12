@@ -1,0 +1,66 @@
+/* TELAS */
+@media only screen and (max-width: 1280px) {
+  .inputStyle {
+    background-color: #ECF0F1;
+    height: 7.6vh;
+    width: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1.1vh;
+    margin-bottom: 1.8vh;
+  }
+
+  .inputStyle img {
+    width: 5%;
+    height: 35%;
+  }
+
+  .inputStyle label{
+    font-size: 2.4vh;
+    color: #818181;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+.inputStyle input {
+    background-color: #ffffff00;
+    border: none;
+    font-size: 2.4vh;
+    outline: none;
+    height: 100%;
+    width: 75%;
+    margin-top: 4px;
+  }
+}
+  
+@media only screen and (max-width: 768px) {
+  
+}
+
+@media only screen and (max-width: 691px) {
+
+}
+
+@media only screen and (max-width: 666px) {
+
+}
+
+@media only screen and (max-width: 633px) {
+
+}
+
+@media only screen and (max-width: 529px) {
+
+}
+
+@media only screen and (max-width: 421px) {
+
+}
+
+@media only screen and (max-width: 356px) {
+
+}
