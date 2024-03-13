@@ -100,7 +100,7 @@
     margin-top: 2vh;
 }
 
-.socials img {
+.socials a {
     width: 80%;
     height: 80%;
     cursor: pointer;
@@ -362,13 +362,12 @@
     text-align: center;
     height: 7vh;
     width: 25%;
-    border-radius: 0.1em;
+    border-radius: 2em;
     background-color: #2f90f7;
     margin-bottom: 1vh;
     position: absolute;
     top: 12vh;
     right: 43vh;
-    transition: opacity 0.5s ease-in-out;
 }
 
 .message.show {

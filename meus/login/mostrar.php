@@ -64,7 +64,7 @@ if (mysqli_connect_errno()){
 </head>
 <body >
   <div class="data">
-  <a href="http://localhost/pw3database-main/meus/login/login.html"><h1 class="back">Voltar</h1></a>
+  <a href="./login.html"><h1 class="back">Voltar</h1></a>
     <div class="user">
       <div class="rowData">
         <h2>Suas informações de login</h2>
