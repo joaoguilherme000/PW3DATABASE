@@ -7,8 +7,8 @@ create database DB_CDS;
 use DB_CDS;
 
 create table artistas(
-nome_art int not null,
-cod_art varchar(100) not null unique,
+cod_art int not null,
+nome_art varchar(100) not null unique,
 primary key(cod_art));
 
 create table gravadoras(
@@ -100,7 +100,7 @@ foreign key(cod_tit) references titulos(cod_tit));
 
 create table titulos_artista (
 cod_tit int not null,
-cod_art varchar(100) not null unique,
+cod_art int not null,
 primary key (cod_tit, cod_art),
 foreign key (cod_tit) references titulos (cod_tit),
 foreign key (cod_art) references artistas (cod_art)
@@ -134,7 +134,8 @@ INSERT INTO categorias (COD_CAT, NOME_CAT) VALUES
 INSERT INTO estados (SIGLA_EST, NOME_EST) VALUES
 ('SP', 'SÃO PAULO'),
 ('MG', 'MINAS GERAIS'),
-('RJ', 'RIO DE JANEIRO');
+('RJ', 'RIO DE JANEIRO'),
+('ES', 'ESPIRITO SANTO');
 
 -- Inserindo dados na tabela CIDADES
 INSERT INTO cidades (COD_CID, SIGLA_EST, NOME_CID) VALUES
