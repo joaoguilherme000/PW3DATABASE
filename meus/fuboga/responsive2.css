@@ -157,7 +157,7 @@
   }
   .message {
     position: absolute;
-    right: 21vh;
+    right: 9vh;
     top: 71vh;
     height: 25vh;
     width: 77vh;
@@ -165,7 +165,7 @@
   }
   
   .dialog {
-    right: 20vh;
+    right: 8vh;
     top: 72vh;
     height: 26vh;
     width: 80vh;
@@ -174,11 +174,11 @@
 
 @media only screen and (max-width: 821px) {
   .message {
-    right: 17%;
+    right: 8%;
   }
   
   .dialog {
-    right: 16%;
+    right: 6%;
   }
 }
 
@@ -204,31 +204,44 @@
 
 @media only screen and (max-width: 631px) {
   .diabo {
-    height: 70vh;
+    height: 65vh;
     margin-top: 4vh;
   }
   .message {
-    right: 9%;
+    right: 4%;
     top: 73vh;
     height: 22vh;
-    width: 70vh;
+    width: 58vh;
     font-size: 3vh;
   }
   
   .dialog {
-    right: 9%;
+    right: 2%;
     top: 75vh;
     height: 22vh;
-    width: 70vh;
+    width: 65vh;
+  }
+}
+@media only screen and (max-width: 574px) {
+  .message {
+    right: 4%;
+    height: 21vh;
+    width: 55vh;
+    font-size: 2.6vh;
+  }
+  .dialog {
+    right: 1%;
+    height: 20vh;
+    width: 59vh;
   }
 }
 
 @media only screen and (max-width: 500px) {
   .message {
-    right: 4%;
+    right: 2%;
   }
   .dialog {
-    right: 4%;
+    right: 0%;
   }
 }
 
@@ -257,41 +270,49 @@
 }
 
 @media only screen and (max-width: 440px) {
+  .diabo {
+    height: 55vh;
+  }
   .message {
-    right: 5%;
-  }
-  
-  .dialog {
-    right: 5%;
-  }
-}
-
-@media only screen and (max-width: 423px) {
-  .message {
-    right: 1%;
-  }
-  
-  .dialog {
-    right: 1%;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .message {
-    right: 6%;
-    height: 21vh;
-    width: 50vh;
+    right: 4%;
+    top: 65vh;
+    height: 26vh;
+    width: 42vh;
     font-size: 2.2vh;
   }
   
   .dialog {
-    right: 3%;
-    height: 20vh;
-    width: 55vh;
+    right: 2%;
+    top: 66vh;
+    height: 25vh;
+    width: 45vh;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .diabo {
+    height: 55vh;
+  }
+  .message {
+    right: 4%;
+    top: 65vh;
+    height: 26vh;
+    width: 42vh;
+    font-size: 2.2vh;
+  }
+  
+  .dialog {
+    right: 2%;
+    top: 66vh;
+    height: 25vh;
+    width: 45vh;
   }
 }
 
 @media only screen and (max-width: 369px) {
+  .diabo {
+    height: 45vh;
+  }
   .message {
     right: 5;
   }
