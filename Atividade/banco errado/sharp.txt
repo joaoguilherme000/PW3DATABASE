@@ -1,0 +1,2 @@
+o codigo muda de tela quando clica no botão fechar
+abre o menu principal e esconde a janela do botão que foi clicado

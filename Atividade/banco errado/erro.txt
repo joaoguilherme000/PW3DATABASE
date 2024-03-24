@@ -1,0 +1,12 @@
+da linha 1 até a 5 : nome do banco diferente na criação e no acesso;
+
+linha 11 : o tipo de dado do email deveria ser varchar, esta escrito var
+que não é um tipo de dado valido;
+
+linha 24 e 28 : escrito codCli está escrito na hora de criar primary key
+codClo;
+
+linha 26 : sem virgula no final do codigo;
+
+linha 34 e 36 : nome da coluna esta diferente na hora de de criar a chave
+estrangeira, codFuncionario => codFunc;
