@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Formulário de Cadastro</title>
+</head>
+<body>
+    <div class="content">
+        <header><img src="logo.png" alt="logo"></header>
+        <div class="main">
+            <h1 class="titulo">Crie sua conta</h1>
+            <form name="cadastro" method="post" action="mostrar.php" class="form">
+                <h2 class="second">Pare ser cliente é neccessário preencher corretamente o fórmulario abaixo com os respectivos dados cadastrais. Os campos com * são de preenchimento obrigatório e essencias.</h2>
+                <div class="nomes">
+                    <label for="nome">Nome *</label>
+                    <input type="text" name="nome" id="nome" autocomplete="on" size="20" maxlength="15" required>
+                    <label for="sobrenome">Sobrenome *</label>
+                    <input type="text" name="sobrenome" id="sobrenome" autocomplete="on" size="20" maxlength="15" required>
+                </div>
+                <div class="outro">
+                    <label for="Email">Email *</label>
+                    <input type="text" name="Email" id="Email" autocomplete="on" size="20" required>
+                </div>
+                <div class="outro">
+                    <label for="CPF">CPF *</label>
+                    <input type="number" name="CPF" id="CPF" autocomplete="on" size="20" required>
+                </div>
+                <div class="outro">
+                    <label>Escolha o sexo:</label><br>
+                    <input type="radio" id="M" name="option" value="M">
+                    <label for="M">Masculino</label><br>
+                    <input type="radio" id="F" name="option" value="F">
+                    <label for="F">Feminino</label><br>
+                    <input type="radio" id="Outro" name="option" value="Outro">
+                    <label for="Outro">Outro</label><br>
+                </div>
+                <div class="outro">
+                    <label for="Usuario">Usuario *</label>
+                    <input type="text" name="Usuario" id="Usuario" autocomplete="on" size="20" required>
+                </div>
+                <div class="outro">
+                    <label for="Senha">Senha *</label>
+                    <input type="password" name="Senha" id="Senha" autocomplete="on" size="20" required>
+                </div>
+                <div class="footer">
+                    <div>
+                        <input type="submit" value="Cadastre-se" class="enviar">
+                    </div>
+                    <h2>Ao preencher o formulário acima você concorda com os nossos <ins>Termos de uso</ins> e nossa <ins>Política de Privacidade</ins></h2>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
