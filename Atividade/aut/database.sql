@@ -1,23 +1,22 @@
-drop database database;
+drop database banco;
 
-create database database;
+create database banco;
 
-
-use database;
+use banco;
 
 CREATE TABLE tbPessoa(
 codigo int not null auto_increment,
-nome VARCHAR(100),
-idade INT,
+nome VARCHAR(20) not null,
+sobrenome VARCHAR(25) not null,
+email VARCHAR(54) not null,
+CPF int not null,
+sexo char(1) default "O" check(sexo in('F','M','O')),
+usuario VARCHAR(33) not null,
+senha VARCHAR(13) not null,
 primary key(codigo));
 
--- insert into tbPessoa(nome,sobrenome,idade)
-    -- values("Etec", "Irmã Agostina", 11);
-
--- visualizar as tabelas criadas
 show tables;
 
--- visualizando a estrutura das tabelas
 desc tbPessoa;
 
 -- conteudo das tabelas

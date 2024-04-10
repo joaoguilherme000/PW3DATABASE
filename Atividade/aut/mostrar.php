@@ -1,35 +1,34 @@
 <?php
-$message = "";
-
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-  $nome = isset($_POST["usuario"]) ? $_POST["usuario"] : "";
-  $idade = isset($_POST["senha"]) ? $_POST["senha"] : "";
-}
-
 $localhost = 'localhost';
 $user_name = 'root';
-$senha = "";
-$db = "database";
- 
-$con = mysqli_connect($localhost,$user_name,$senha,$db);
-if (mysqli_connect_errno()){
-    echo "Erro ao conectar com o banco de dados: " . mysqli_connect_error();
-} else {
-  mysqli_close($con);
-}
-?>
+$password = "";
+$db = "banco";
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../estilo/reset.css">
-    <link rel="stylesheet" href="./style.css">
-    <title>Bem vindo</title>
-</head>
-<body >
-  <a href="./index.html"><h1 class="back">Voltar</h1></a>
-</body>
-</html>
+$conn = new mysqli($localhost, $user_name, $password, $db);
+
+if (mysqli_connect_errno()){
+  echo "Erro ao conectar com o banco de dados: " . mysqli_connect_error();
+}
+
+// Captura os dados do formulário
+$nome = $_POST['nome'];
+$sobrenome = $_POST['sobrenome'];
+$email = $_POST['email'];
+$CPF = $_POST['CPF'];
+$sexo = $_POST['option'];
+$usuario = $_POST['usuario'];
+$senha = $_POST['senha'];
+
+// Insere os dados no banco de dados
+$sql = "INSERT INTO tbpessoa (nome, sobrenome, email, CPF, sexo, usuario, senha) VALUES ('$nome', '$sobrenome', '$email', '$CPF', '$sexo', '$usuario', '$senha')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Cadastro realizado com sucesso!";
+} else {
+    echo "Erro: " . $sql . "<br>" . $conn->error;
+}
+
+mysqli_close($conn);
+header("Location: login.php");
+  exit();
+?>

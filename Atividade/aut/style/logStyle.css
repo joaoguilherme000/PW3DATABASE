@@ -14,19 +14,18 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-
 .container {
+  display: flex;
   margin-top: 1vh;
-  width: 500px;
+  width: 54vh;
   background-color: white;
   border-radius: 0.5vh;
-  height: 500px;
+  height: 60vh;
 }
 
 input {
   font-size: 2vh;
 }
-
 
 form {
   padding-left: 6vh;
@@ -85,7 +84,7 @@ input[type="checkbox"]:checked + .checkbox-label::before {
 .outro input{
   width: 100%;
   margin-top: 1vh;
-  padding: 10px;    
+  padding: 1.2vh;    
   border: 1px solid #b2b2b2;
   background-color: white;
   -webkit-border-radius: 3px;
@@ -98,11 +97,22 @@ input[type="checkbox"]:checked + .checkbox-label::before {
   transition: all 0.2s linear;
 }
 
+.erro {
+  font-size: 2vh;
+  background-color: #ffcccc; 
+  color: #cc0000; 
+  padding: 10px; 
+  border: 1px solid #cc0000;
+  margin-top: 1vh;
+}
+
 .bottomCont {
+  position: relative;
+  display: flexbox;
   margin-top: 2vh;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 90%;
   width: 100%;
 }
 
@@ -136,6 +146,10 @@ input[type="checkbox"]:checked + .checkbox-label::before {
 .cad {
   margin-top: 5vh;
   text-align: center;
+}
+
+.cad p{
+  font-size: 2vh;
 }
 
 ins {
