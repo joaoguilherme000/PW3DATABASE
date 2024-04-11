@@ -17,7 +17,7 @@ body {
     margin-top: 1vh;
     width: 65%;
     background-color: white;
-    border-radius: 0.5vh;
+    border-radius: 0.8vh;
     height: 98%;
 }
 
@@ -36,6 +36,22 @@ header {
     justify-content: center;
     flex-direction: column;
     padding: 2vh;
+    overflow: auto;
+    height: 86vh;
+    max-height: 87vh;
+}
+
+::-webkit-scrollbar {
+    width: 1vh; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 1vh; 
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
 }
 
 input {
@@ -48,8 +64,8 @@ input {
 }
 
 form {
-    padding-left: 8vh;
-    padding-right: 8vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
 }
 .second {
     font-size: 2vh;
@@ -80,8 +96,8 @@ form {
     padding: 10px;    
     border: 1px solid #b2b2b2;
     background-color: white;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+    -webkit-border-radius: 0.4vh;
+    border-radius: 0.4vh;
     
     -webkit-box-shadow: 0px 1px 1px 0px rgba(168, 168, 168, 0.6) inset;
     box-shadow: 0px 1px 1px 0px rgba(168, 168, 168, 0.6) inset;
@@ -123,8 +139,8 @@ form {
     padding: 10px;    
     border: 1px solid #b2b2b2;
     background-color: white;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+    -webkit-border-radius: 0.4vh;
+    border-radius: 0.4vh;
     
     -webkit-box-shadow: 0px 1px 1px 0px rgba(168, 168, 168, 0.6) inset;
     box-shadow: 0px 1px 1px 0px rgba(168, 168, 168, 0.6) inset;
@@ -205,26 +221,61 @@ form {
     flex-direction: row;
 }
 
+.footer a{
+    text-decoration: none;
+}
+
 .footer div{
     width: 50%;
     display: flex;
     align-items: left;
 }
 
-.footer div input {
+.footer div input[type="submit"] {
     border: none;
-    border-radius: 0.7vh;
+    border-radius: 0.4vh;
     background-color: #ff1854;
     color: white;
     padding: 1.5vh;
     font-size: 2.1vh;
+    cursor: pointer;
 }
 
+.footer div input[type="submit"]:hover {
+  background-color: #b1002f;
+  color: #38000f;
+}
+
+.footer div input[type="submit"]:active {
+  background-color: #ffffff;
+  color: #000000;
+}
 .footer h2 {
     width: 50%;
     align-items: right;
     font-size: 2vh;
     color: rgb(98, 98, 98);
+}
+
+.back{
+    border: none;
+    border-radius: 0.4vh;
+    background-color: #ff1854;
+    color: white;
+    padding: 1vh;
+    font-size: 1.5vh;
+    text-align: center;
+    cursor: pointer;
+}
+
+.back:hover{
+    background-color: #b1002f;
+    color: #38000f;
+}
+
+.back:active{
+    background-color: #ffffff;
+    color: #000000;
 }
 
 ins {

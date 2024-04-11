@@ -29,6 +29,6 @@ if ($conn->query($sql) === TRUE) {
 }
 
 mysqli_close($conn);
-header("Location: login.php");
+header("Location: index.php");
   exit();
 ?>

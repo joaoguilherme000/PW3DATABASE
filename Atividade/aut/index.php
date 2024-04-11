@@ -1,6 +1,21 @@
 <?php
 session_start();
 
+if (isset($_GET['logout']) && $_GET['logout'] == 'true') {
+  $_SESSION = array();
+
+  if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000,
+      $params["path"], $params["domain"],
+      $params["secure"], $params["httponly"]
+    );
+  }
+
+  // Destruir a sessão
+  session_destroy();
+}
+
 $localhost = 'localhost';
 $user_name = 'root';
 $password = "";
@@ -12,19 +27,28 @@ if (mysqli_connect_errno()){
     echo "Erro ao conectar com o banco de dados: " . mysqli_connect_error();
 }
 
-// Verifica se os dados foram enviados via método POST
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    // Recupera os valores do formulário
-    $usuario = $_GET["usuario"];
-    $senha = $_GET["senha"];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    if ($usuario === "usuario" && $senha === "senha") {
-        $_SESSION["usuario"] = $usuario;
-        header("Location: pag2.php");
-        exit;
-    } else {
-        $erro = "Usuário ou senha incorretos";
-    }
+  $usuario = $_POST["usuario"];
+  $senha = $_POST["senha"];
+
+  $sql = "SELECT * FROM tbpessoa WHERE usuario = '$usuario' AND senha = '$senha'";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+      $_SESSION["usuario"] = $usuario;
+      header("Location: pag2.php");
+      exit;
+  } else {
+      $sql_check_user = "SELECT * FROM tbpessoa WHERE usuario = '$usuario'";
+      $result_check_user = $conn->query($sql_check_user);
+      
+      if ($result_check_user->num_rows > 0) {
+          $erro = "Usuario ou senha invalido";
+      } else {
+          $erro = "Sem cadastro";
+      }
+  }
 }
 ?>
 
@@ -38,15 +62,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 </head>
 <body>
   <div class="container">
-    <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"> 
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"> 
       <h1>Login</h1> 
       <div class="outro">
         <label for="usuario" class="first">Usuario</label>
-        <input type="text" name="usuario" id="usuario" autocomplete="on" size="20" maxlength="33" required>
+        <input type="text" name="usuario" id="usuario" autocomplete="on" size="20" maxlength="33">
       </div>
       <div class="outro">
         <label for="senha" class="first">Senha</label>
-        <input type="password" name="senha" id="senha" autocomplete="on" size="20" maxlength="13" required>
+        <input type="password" name="senha" id="senha" autocomplete="on" size="20" maxlength="13">
       </div>
       <?php if(isset($erro)) { ?>
       <div class="erro">
