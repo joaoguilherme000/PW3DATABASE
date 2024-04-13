@@ -19,12 +19,36 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'true') {
 $localhost = 'localhost';
 $user_name = 'root';
 $password = "";
-$db = "banco";
 
-$conn = new mysqli($localhost, $user_name, $password, $db);
+$conn = new mysqli($localhost, $user_name, $password);
 
-if (mysqli_connect_errno()){
-    echo "Erro ao conectar com o banco de dados: " . mysqli_connect_error();
+if ($conn->connect_error) {
+    echo "<script>console.error('Erro ao conectar ao MySQL: " . $conn->connect_error . "');</script>";
+}
+
+$sql_create_database = "CREATE DATABASE IF NOT EXISTS banco";
+if ($conn->query($sql_create_database) === TRUE) {
+    echo "<script>console.log('Banco de dados criado com sucesso ou já existente');</script>";
+} else {
+    echo "<script>console.error('Erro ao criar o banco de dados: " . $conn->error . "');</script>";
+}
+
+$conn->select_db("banco");
+
+$sql_create_table = "CREATE TABLE IF NOT EXISTS tbPessoa (
+    codigo INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(20) NOT NULL,
+    sobrenome VARCHAR(25) NOT NULL,
+    email VARCHAR(54) NOT NULL,
+    CPF VARCHAR(15) NOT NULL,
+    sexo CHAR(1) DEFAULT 'O' CHECK(sexo IN ('F','M','O')),
+    usuario VARCHAR(33) NOT NULL,
+    senha VARCHAR(13) NOT NULL
+)";
+if ($conn->query($sql_create_table) === TRUE) {
+    echo "<script>console.log('Tabela criada com sucesso ou já existente');</script>";
+} else {
+    echo "<script>console.error('Erro ao criar a tabela: " . $conn->error . "');</script>";
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -36,18 +60,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
-      $_SESSION["usuario"] = $usuario;
-      header("Location: pag2.php");
-      exit;
+    $_SESSION["usuario"] = $usuario;
+    header("Location: pag2.php?usuario=$usuario"); // Adicionando o nome de usuário à URL
+    exit;
   } else {
-      $sql_check_user = "SELECT * FROM tbpessoa WHERE usuario = '$usuario'";
-      $result_check_user = $conn->query($sql_check_user);
-      
-      if ($result_check_user->num_rows > 0) {
-          $erro = "Usuario ou senha invalido";
-      } else {
-          $erro = "Sem cadastro";
-      }
+    $sql_check_user = "SELECT * FROM tbpessoa WHERE usuario = '$usuario'";
+    $result_check_user = $conn->query($sql_check_user);
+    
+    if ($result_check_user->num_rows > 0) {
+      $erro = "Usuario ou senha invalido";
+    } else {
+      $erro = "Sem cadastro";
+    }
   }
 }
 ?>

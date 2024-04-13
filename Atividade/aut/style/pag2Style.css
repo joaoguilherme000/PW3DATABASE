@@ -35,3 +35,24 @@ body {
 a{
     text-decoration: none;
 }
+
+#mySidenav a {
+    position: absolute;
+    left: -80px;
+    transition: 0.4s;
+    padding: 1.5vh;
+    width: 10vh;
+    text-decoration: none;
+    font-size: 2vh;
+    color: white;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  #mySidenav a:hover {
+    left: 0;
+  }
+  
+  #projects {
+    top: 1vh;
+    background-color: #f44336;
+  }

@@ -1,3 +1,5 @@
+-- primerio de tudo entra no xamp shell e faz MySQL -h localhost -u root -p
+
 drop database banco;
 
 create database banco;
