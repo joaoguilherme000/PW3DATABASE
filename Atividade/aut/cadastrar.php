@@ -1,3 +1,40 @@
+<?php
+session_start();
+
+$localhost = 'localhost';
+$user_name = 'root';
+$password = "";
+$db = "banco";
+
+$conn = new mysqli($localhost, $user_name, $password, $db);
+
+if (mysqli_connect_errno()){
+  echo "Erro ao conectar com o banco de dados: " . mysqli_connect_error();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST['nome'];
+    $sobrenome = $_POST['sobrenome'];
+    $email = $_POST['email'];
+    $CPF = $_POST['CPF'];
+    $sexo = $_POST['option'];
+    $usuario = $_POST['usuario'];
+    $senha = $_POST['senha'];
+
+    $sql = "INSERT INTO tbpessoa (nome, sobrenome, email, CPF, sexo, usuario, senha) VALUES ('$nome', '$sobrenome', '$email', '$CPF', '$sexo', '$usuario', '$senha')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Cadastro realizado com sucesso!";
+    } else {
+        echo "Erro: " . $sql . "<br>" . $conn->error;
+    }
+
+    mysqli_close($conn);
+    header("Location: index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +50,7 @@
         <header><img src="logo.png" alt="logo"></header>
         <div class="main">
             <h1 class="titulo">Crie sua conta</h1>
-            <form name="cadastro" method="post" action="mostrar.php" class="form">
+            <form name="cadastro" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form">
                 <h2 class="second">Pare ser cliente é neccessário preencher corretamente o fórmulario abaixo com os respectivos dados cadastrais. Os campos com * são de preenchimento obrigatório e essencias.</h2>
                 <div class="nomes">
                     <div class="nome">
@@ -75,18 +112,17 @@
             var cpfInput = document.getElementById('CPF');
             
             cpfInput.addEventListener('input', function() {
-                console.log('Input detectado!'); // Verifica se a entrada está sendo detectada
+                console.log('Input detectado!');
 
-                var cpf = cpfInput.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-                cpf = cpf.padStart(11, ''); // Garante que o CPF tenha 11 dígitos
+                var cpf = cpfInput.value.replace(/\D/g, '');
+                cpf = cpf.padStart(11, '');
     
-                // Formata o CPF apenas se houver 11 dígitos numéricos
                 if (cpf.length === 11) {
                     var cpfFormatado = cpf.substring(0, 3) + '.' +
                                     cpf.substring(3, 6) + '.' +
                                     cpf.substring(6, 9) + '-' +
                                     cpf.substring(9, 11);
-                    cpfInput.value = cpfFormatado; // Atualiza o valor do input com o CPF formatado
+                    cpfInput.value = cpfFormatado;
                     console.log(cpfFormatado);
                 }
             });

@@ -110,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <input type="submit" value="Logar" />
         </div>
         <div class="cad">
-          <p>ainda não tem uma conta <a href="cadastrar.html" class="ins">Cadastre-se</a></p>
+          <p>ainda não tem uma conta <a href="cadastrar.php" class="ins">Cadastre-se</a></p>
         </div>
       </div>
     </form>
