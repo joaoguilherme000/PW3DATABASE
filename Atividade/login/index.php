@@ -43,7 +43,8 @@ $sql_create_table = "CREATE TABLE IF NOT EXISTS tbPessoa (
     CPF VARCHAR(15) NOT NULL,
     sexo CHAR(1) DEFAULT 'O' CHECK(sexo IN ('F','M','O')),
     usuario VARCHAR(33) NOT NULL,
-    senha VARCHAR(13) NOT NULL
+    senha VARCHAR(13) NOT NULL,
+    primary key(codigo)
 )";
 if ($conn->query($sql_create_table) === TRUE) {
     echo "<script>console.log('Tabela criada com sucesso ou já existente');</script>";
